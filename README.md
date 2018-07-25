@@ -4,6 +4,8 @@ Based on official FB Tutorial: https://github.com/fbsamples/messenger-platform-s
 
 ## Prerequisite
 
+A FB Page and App with the proper rights, Page Access Token & Verify Token.
+
 NodeJS v8: https://nodejs.org/en/
 
 A publicly available webserver with https where you can deploy & run the application.
