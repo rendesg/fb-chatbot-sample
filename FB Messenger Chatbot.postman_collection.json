@@ -1,0 +1,116 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FB Messenger Chatbot",
+		"_postman_id": "3b2d0161-186f-84d5-73be-6129a4c6621c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verify Token",
+			"request": {
+				"url": {
+					"raw": "localhost:1337/webhook?hub.mode=subscribe&hub.verify_token=YOUR_VERIFY_TOKEN&challenge=random_challenge",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"webhook"
+					],
+					"query": [
+						{
+							"key": "hub.mode",
+							"value": "subscribe",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "hub.verify_token",
+							"value": "YOUR_VERIFY_TOKEN",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "challenge",
+							"value": "random_challenge",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Broadcast Message",
+			"request": {
+				"url": "localhost:1337/create-broadcast",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message\": \"This is your second broadcast message! :D\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Send BroadCast",
+			"request": {
+				"url": "localhost:1337/send-broadcast",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"message_creative_id\": 1030268237154248,\n\t\"schedule_time\": \"2018-07-07T12:15:00+02:00\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Set GetStarted button",
+			"request": {
+				"url": "localhost:1337/set-get-started",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
